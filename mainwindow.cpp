@@ -199,7 +199,7 @@ void MainWindow::on_action_4_triggered()
     ui->statusBar->showMessage("start");
     CANDataTimer->start(300);
 }
-//这个注释
+//这个注释辅导费
 void MainWindow::on_action_5_triggered()
 {
     quint16 temp;
