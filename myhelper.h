@@ -1,25 +1,11 @@
 #ifndef MYHELPER_H
 #define MYHELPER_H
 
-#include <QtGui>
-#include <QWidget>
-#include <QApplication>
-#include <QPoint>
-#include <QDesktopWidget>
-#include <QFile>
-#include <QMessageBox>
-#include <QAbstractButton>
-#include <QCoreApplication>
-#include <QFileDialog>
 #include <QTime>
 #include <QProcess>
-#include <QDir>
-#include <QApplication>
-#include <QStyleFactory>
-#include <QInputDialog>
-#include <QStyle>
 #include <QDebug>
 #include <QByteArray>
+#include <QString>
 class myHelper:public QObject
 {
 public:
@@ -52,7 +38,7 @@ public:
             char lstr,hstr;
             for(int i=0; i<len; )
             {
-                hstr=str[i].toAscii();
+                hstr=str[i].toLatin1();
                 if(hstr == ' ')
                 {
                     i++;
@@ -61,7 +47,7 @@ public:
                 i++;
                 if(i >= len)
                     break;
-                lstr = str[i].toAscii();
+                lstr = str[i].toLatin1();
                 hexdata = ConvertHexChar(hstr);
                 lowhexdata = ConvertHexChar(lstr);
                 if((hexdata == 16) || (lowhexdata == 16))
